@@ -20,7 +20,6 @@ public class EnableObjects02 : MonoBehaviour {
     public Image PlayByEarButton;
     public Image PerformanceButton;
     public Image FreeJamButton;
-    public Image SettingsButton;
 
 // -------------------- PRIVATE VARIABLES --------------------
     float BubbleASpeed;
@@ -72,7 +71,6 @@ public class EnableObjects02 : MonoBehaviour {
         PlayByEarButton.enabled = true;
         PerformanceButton.enabled = true;
         FreeJamButton.enabled = true;
-        SettingsButton.enabled = true;
     }
 
     public void EnableBackgroundBubblesA() {
@@ -92,7 +90,6 @@ public class EnableObjects02 : MonoBehaviour {
         PlayByEarButton.enabled = false;
         PerformanceButton.enabled = false;
         FreeJamButton.enabled = false;
-        SettingsButton.enabled = false;
     }
 
     public void DisableBackgroundBubblesA() {

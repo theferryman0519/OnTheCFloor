@@ -61,6 +61,22 @@ public class Buttons03 : MonoBehaviour {
     public Button SettingsOffButton;
     public Button SettingsBackButton;
 
+    // Piano Notes
+    public AudioSource PianoNoteA4;
+    public AudioSource PianoNoteB4;
+    public AudioSource PianoNoteC4;
+    public AudioSource PianoNoteD4;
+    public AudioSource PianoNoteE4;
+    public AudioSource PianoNoteF4;
+    public AudioSource PianoNoteG4;
+    public AudioSource PianoNoteA5;
+    public AudioSource PianoNoteB5;
+    public AudioSource PianoNoteC5;
+    public AudioSource PianoNoteD5;
+    public AudioSource PianoNoteE5;
+    public AudioSource PianoNoteF5;
+    public AudioSource PianoNoteG5;
+
 // -------------------- PRIVATE VARIABLES --------------------
 
 
@@ -235,6 +251,36 @@ public class Buttons03 : MonoBehaviour {
         // SettingsBackButton
         Button SettingsBackButtonClick = SettingsBackButton.GetComponent<Button>();
         SettingsBackButtonClick.onClick.AddListener(SettingsBackButtonClicking);
+
+        // Piano Notes
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+        PianoNoteA4.volume = 0.0f;
+        PianoNoteB4.volume = 0.0f;
+        PianoNoteC4.volume = 0.0f;
+        PianoNoteD4.volume = 0.0f;
+        PianoNoteE4.volume = 0.0f;
+        PianoNoteF4.volume = 0.0f;
+        PianoNoteG4.volume = 0.0f;
+        PianoNoteA5.volume = 0.0f;
+        PianoNoteB5.volume = 0.0f;
+        PianoNoteC5.volume = 0.0f;
+        PianoNoteD5.volume = 0.0f;
+        PianoNoteE5.volume = 0.0f;
+        PianoNoteF5.volume = 0.0f;
+        PianoNoteG5.volume = 0.0f;
     }
 
 // -------------------- AWAKE FUNCTION --------------------
@@ -259,94 +305,318 @@ public class Buttons03 : MonoBehaviour {
     }
 
     public void BubbleNotesAOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralAOnOff = 1;
-        // Unmute A Note
+        if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 8) || (EnableObjects03.ActionNoteInt == 15)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralAOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 8) {
+                PianoNoteA5.volume = 3.0f;
+                PianoNoteA5.Play();
+                EnableObjects03.ActionNoteInt = 9;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 15)) {
+                PianoNoteA4.volume = 3.0f;
+                PianoNoteA4.Play();
+
+                if (EnableObjects03.ActionNoteInt == 1) {
+                    EnableObjects03.ActionNoteInt = 2;
+                }
+
+                else if (EnableObjects03.ActionNoteInt == 15) {
+                    EnableObjects03.ActionNoteInt = 16;
+                }
+            }
+        }
     }
 
     public void BubbleNotesBOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralBOnOff = 1;
-        // Unmute B Note
+        if ((EnableObjects03.ActionNoteInt == 4) || (EnableObjects03.ActionNoteInt == 11)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralBOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 11) {
+                PianoNoteB5.volume = 3.0f;
+                PianoNoteB5.Play();
+                EnableObjects03.ActionNoteInt = 12;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 4) {
+                PianoNoteB4.volume = 3.0f;
+                PianoNoteB4.Play();
+                EnableObjects03.ActionNoteInt = 5;
+            }
+        }
     }
 
     public void BubbleNotesCOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralCOnOff = 1;
-        // Unmute C Note
+        if ((EnableObjects03.ActionNoteInt == 6) || (EnableObjects03.ActionNoteInt == 13)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralCOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 13) {
+                PianoNoteC5.volume = 3.0f;
+                PianoNoteC5.Play();
+                EnableObjects03.ActionNoteInt = 14;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 6) {
+                PianoNoteC4.volume = 3.0f;
+                PianoNoteC4.Play();
+                EnableObjects03.ActionNoteInt = 7;
+            }
+        }
     }
 
     public void BubbleNotesDOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralDOnOff = 1;
-        // Unmute D Note
+        if ((EnableObjects03.ActionNoteInt == 2) || (EnableObjects03.ActionNoteInt == 10)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralDOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 10) {
+                PianoNoteD5.volume = 3.0f;
+                PianoNoteD5.Play();
+                EnableObjects03.ActionNoteInt = 11;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 2) {
+                PianoNoteD4.volume = 3.0f;
+                PianoNoteD4.Play();
+                EnableObjects03.ActionNoteInt = 3;
+            }
+        }
     }
 
     public void BubbleNotesEOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralEOnOff = 1;
-        // Unmute E Note
+        if ((EnableObjects03.ActionNoteInt == 5) || (EnableObjects03.ActionNoteInt == 14)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralEOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 14) {
+                PianoNoteE5.volume = 3.0f;
+                PianoNoteE5.Play();
+                EnableObjects03.ActionNoteInt = 15;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 5) {
+                PianoNoteE4.volume = 3.0f;
+                PianoNoteE4.Play();
+                EnableObjects03.ActionNoteInt = 6;
+            }
+        }
     }
 
     public void BubbleNotesFOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralFOnOff = 1;
-        // Unmute F Note
+        if ((EnableObjects03.ActionNoteInt == 7) || (EnableObjects03.ActionNoteInt == 12)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralFOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 12) {
+                PianoNoteF5.volume = 3.0f;
+                PianoNoteF5.Play();
+                EnableObjects03.ActionNoteInt = 13;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 7) {
+                PianoNoteF4.volume = 3.0f;
+                PianoNoteF4.Play();
+                EnableObjects03.ActionNoteInt = 8;
+            }
+        }
     }
 
     public void BubbleNotesGOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralGOnOff = 1;
-        // Unmute G Note
+        if ((EnableObjects03.ActionNoteInt == 3) || (EnableObjects03.ActionNoteInt == 9)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralGOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 9) {
+                PianoNoteG5.volume = 3.0f;
+                PianoNoteG5.Play();
+                EnableObjects03.ActionNoteInt = 10;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 3) {
+                PianoNoteG4.volume = 3.0f;
+                PianoNoteG4.Play();
+                EnableObjects03.ActionNoteInt = 4;
+            }
+        }
     }
 
     public void BubbleNotesOctaveOffClicking() {
@@ -357,7 +627,6 @@ public class Buttons03 : MonoBehaviour {
         else {
             EnableObjects03.CoralOctaveOnOff = 0;
         }
-        // Unmute Octave Note
     }
 
     public void BubbleNotesAOnClicking() {
@@ -368,9 +637,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralAOnOff = 0;
-        // Mute A Note
+        PianoNoteA4.volume = 0.0f;
+        PianoNoteA5.volume = 0.0f;
+        PianoNoteA4.Stop();
+        PianoNoteA5.Stop();
     }
 
     public void BubbleNotesBOnClicking() {
@@ -381,9 +652,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralBOnOff = 0;
-        // Mute B Note
+        PianoNoteB4.volume = 0.0f;
+        PianoNoteB5.volume = 0.0f;
+        PianoNoteB4.Stop();
+        PianoNoteB5.Stop();
     }
 
     public void BubbleNotesCOnClicking() {
@@ -394,9 +667,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralCOnOff = 0;
-        // Mute C Note
+        PianoNoteC4.volume = 0.0f;
+        PianoNoteC5.volume = 0.0f;
+        PianoNoteC4.Stop();
+        PianoNoteC5.Stop();
     }
 
     public void BubbleNotesDOnClicking() {
@@ -407,9 +682,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralDOnOff = 0;
-        // Mute D Note
+        PianoNoteD4.volume = 0.0f;
+        PianoNoteD5.volume = 0.0f;
+        PianoNoteD4.Stop();
+        PianoNoteD5.Stop();
     }
 
     public void BubbleNotesEOnClicking() {
@@ -420,9 +697,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralEOnOff = 0;
-        // Mute E Note
+        PianoNoteE4.volume = 0.0f;
+        PianoNoteE5.volume = 0.0f;
+        PianoNoteE4.Stop();
+        PianoNoteE5.Stop();
     }
 
     public void BubbleNotesFOnClicking() {
@@ -433,9 +712,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
-        // Mute F Note
+        PianoNoteF4.volume = 0.0f;
+        PianoNoteF5.volume = 0.0f;
+        PianoNoteF4.Stop();
+        PianoNoteF5.Stop();
     }
 
     public void BubbleNotesGOnClicking() {
@@ -446,105 +727,330 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        // Mute G Note
+        PianoNoteG4.volume = 0.0f;
+        PianoNoteG5.volume = 0.0f;
+        PianoNoteG4.Stop();
+        PianoNoteG5.Stop();
     }
 
     public void BubbleNotesOctaveOnClicking() {
         EnableObjects03.CoralOctaveOnOff = 0;
-        // Mute Octave Note
     }
 
     public void CoralAOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralAOnOff = 1;
-        // Unmute A Note
+        if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 8) || (EnableObjects03.ActionNoteInt == 15)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralAOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 8) {
+                PianoNoteA5.volume = 3.0f;
+                PianoNoteA5.Play();
+                EnableObjects03.ActionNoteInt = 9;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 15)) {
+                PianoNoteA4.volume = 3.0f;
+                PianoNoteA4.Play();
+
+                if (EnableObjects03.ActionNoteInt == 1) {
+                    EnableObjects03.ActionNoteInt = 2;
+                }
+
+                else if (EnableObjects03.ActionNoteInt == 15) {
+                    EnableObjects03.ActionNoteInt = 16;
+                }
+            }
+        }
     }
 
     public void CoralBOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralBOnOff = 1;
-        // Unmute B Note
+        if ((EnableObjects03.ActionNoteInt == 4) || (EnableObjects03.ActionNoteInt == 11)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralBOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 11) {
+                PianoNoteB5.volume = 3.0f;
+                PianoNoteB5.Play();
+                EnableObjects03.ActionNoteInt = 12;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 4) {
+                PianoNoteB4.volume = 3.0f;
+                PianoNoteB4.Play();
+                EnableObjects03.ActionNoteInt = 5;
+            }
+        }
     }
 
     public void CoralCOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralCOnOff = 1;
-        // Unmute C Note
+        if ((EnableObjects03.ActionNoteInt == 6) || (EnableObjects03.ActionNoteInt == 13)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralCOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 13) {
+                PianoNoteC5.volume = 3.0f;
+                PianoNoteC5.Play();
+                EnableObjects03.ActionNoteInt = 14;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 6) {
+                PianoNoteC4.volume = 3.0f;
+                PianoNoteC4.Play();
+                EnableObjects03.ActionNoteInt = 7;
+            }
+        }
     }
 
     public void CoralDOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralDOnOff = 1;
-        // Unmute D Note
+        if ((EnableObjects03.ActionNoteInt == 2) || (EnableObjects03.ActionNoteInt == 10)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralDOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 10) {
+                PianoNoteD5.volume = 3.0f;
+                PianoNoteD5.Play();
+                EnableObjects03.ActionNoteInt = 11;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 2) {
+                PianoNoteD4.volume = 3.0f;
+                PianoNoteD4.Play();
+                EnableObjects03.ActionNoteInt = 3;
+            }
+        }
     }
 
     public void CoralEOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralEOnOff = 1;
-        // Unmute E Note
+        if ((EnableObjects03.ActionNoteInt == 5) || (EnableObjects03.ActionNoteInt == 14)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralEOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 14) {
+                PianoNoteE5.volume = 3.0f;
+                PianoNoteE5.Play();
+                EnableObjects03.ActionNoteInt = 15;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 5) {
+                PianoNoteE4.volume = 3.0f;
+                PianoNoteE4.Play();
+                EnableObjects03.ActionNoteInt = 6;
+            }
+        }
     }
 
     public void CoralFOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralFOnOff = 1;
-        // Unmute F Note
+        if ((EnableObjects03.ActionNoteInt == 7) || (EnableObjects03.ActionNoteInt == 12)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralFOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 12) {
+                PianoNoteF5.volume = 3.0f;
+                PianoNoteF5.Play();
+                EnableObjects03.ActionNoteInt = 13;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 7) {
+                PianoNoteF4.volume = 3.0f;
+                PianoNoteF4.Play();
+                EnableObjects03.ActionNoteInt = 8;
+            }
+        }
     }
 
     public void CoralGOffClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralGOnOff = 1;
-        // Unmute G Note
+        if ((EnableObjects03.ActionNoteInt == 3) || (EnableObjects03.ActionNoteInt == 9)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralGOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 9) {
+                PianoNoteG5.volume = 3.0f;
+                PianoNoteG5.Play();
+                EnableObjects03.ActionNoteInt = 10;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 3) {
+                PianoNoteG4.volume = 3.0f;
+                PianoNoteG4.Play();
+                EnableObjects03.ActionNoteInt = 4;
+            }
+        }
     }
 
     public void CoralOctaveOffClicking() {
@@ -555,7 +1061,6 @@ public class Buttons03 : MonoBehaviour {
         else {
             EnableObjects03.CoralOctaveOnOff = 0;
         }
-        // Unmute Octave Note
     }
 
     public void CoralAOnClicking() {
@@ -566,9 +1071,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralAOnOff = 0;
-        // Mute A Note
+        PianoNoteA4.volume = 0.0f;
+        PianoNoteA5.volume = 0.0f;
+        PianoNoteA4.Stop();
+        PianoNoteA5.Stop();
     }
 
     public void CoralBOnClicking() {
@@ -579,9 +1086,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralBOnOff = 0;
-        // Mute B Note
+        PianoNoteB4.volume = 0.0f;
+        PianoNoteB5.volume = 0.0f;
+        PianoNoteB4.Stop();
+        PianoNoteB5.Stop();
     }
 
     public void CoralCOnClicking() {
@@ -592,9 +1101,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralCOnOff = 0;
-        // Mute C Note
+        PianoNoteC4.volume = 0.0f;
+        PianoNoteC5.volume = 0.0f;
+        PianoNoteC4.Stop();
+        PianoNoteC5.Stop();
     }
 
     public void CoralDOnClicking() {
@@ -605,9 +1116,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralDOnOff = 0;
-        // Mute D Note
+        PianoNoteD4.volume = 0.0f;
+        PianoNoteD5.volume = 0.0f;
+        PianoNoteD4.Stop();
+        PianoNoteD5.Stop();
     }
 
     public void CoralEOnClicking() {
@@ -618,9 +1131,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralEOnOff = 0;
-        // Mute E Note
+        PianoNoteE4.volume = 0.0f;
+        PianoNoteE5.volume = 0.0f;
+        PianoNoteE4.Stop();
+        PianoNoteE5.Stop();
     }
 
     public void CoralFOnClicking() {
@@ -631,9 +1146,11 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralEOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralFOnOff = 0;
-        // Mute F Note
+        PianoNoteF4.volume = 0.0f;
+        PianoNoteF5.volume = 0.0f;
+        PianoNoteF4.Stop();
+        PianoNoteF5.Stop();
     }
 
     public void CoralGOnClicking() {
@@ -646,12 +1163,14 @@ public class Buttons03 : MonoBehaviour {
         EnableObjects03.CoralGOnOff = 0;
         EnableObjects03.CoralOctaveOnOff = 0;
         EnableObjects03.CoralGOnOff = 0;
-        // Mute G Note
+        PianoNoteG4.volume = 0.0f;
+        PianoNoteG5.volume = 0.0f;
+        PianoNoteG4.Stop();
+        PianoNoteG5.Stop();
     }
 
     public void CoralOctaveOnClicking() {
         EnableObjects03.CoralOctaveOnOff = 0;
-        // Mute Octave Note
     }
 
     public void IntroPriorButtonClicking() {

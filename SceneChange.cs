@@ -25,7 +25,6 @@ public class SceneChange : MonoBehaviour {
     public static string Scene04 = "04PlayByEar";
     public static string Scene05 = "05Performance";
     public static string Scene06 = "06FreeJam";
-    public static string Scene07 = "07Settings";
 
 // ------------------------------ END: LIST OF VARIABLES ------------------------------
 // ------------------------------ START: CALLING OTHER SCRIPTS ------------------------------
@@ -85,11 +84,6 @@ public class SceneChange : MonoBehaviour {
     // Load Scene06 - Free Jam Scene
     public void Scene06Load() {
         SceneManager.LoadScene(Scene06);
-    }
-
-    // Load Scene07 - Settings Scene
-    public void Scene07Load() {
-        SceneManager.LoadScene(Scene07);
     }
 
 // ------------------------------ END: OTHER FUNCTIONS ------------------------------

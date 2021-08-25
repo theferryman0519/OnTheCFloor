@@ -15,7 +15,6 @@ public class Buttons02 : MonoBehaviour {
     public Button PlayByEarButton;
     public Button PerformanceButton;
     public Button FreeJamButton;
-    public Button SettingsButton;
 
 // -------------------- PRIVATE VARIABLES --------------------
 
@@ -30,7 +29,6 @@ public class Buttons02 : MonoBehaviour {
     public SceneChange Scene04LoadRun;
     public SceneChange Scene05LoadRun;
     public SceneChange Scene06LoadRun;
-    public SceneChange Scene07LoadRun;
 
 // ------------------------------ END: CALLING OTHER SCRIPTS ------------------------------
 // ------------------------------ START: CALLING INITIAL FUNCTIONS ------------------------------
@@ -51,10 +49,6 @@ public class Buttons02 : MonoBehaviour {
         // FreeJamButton
         Button FreeJamButtonClick = FreeJamButton.GetComponent<Button>();
         FreeJamButtonClick.onClick.AddListener(FreeJamButtonClicking);
-
-        // SettingsButton
-        Button SettingsButtonClick = SettingsButton.GetComponent<Button>();
-        SettingsButtonClick.onClick.AddListener(SettingsButtonClicking);
     }
 
 // -------------------- AWAKE FUNCTION --------------------
@@ -84,10 +78,6 @@ public class Buttons02 : MonoBehaviour {
 
     public void FreeJamButtonClicking() {
         Scene06LoadRun.Scene06Load();
-    }
-
-    public void SettingsButtonClicking() {
-        Scene07LoadRun.Scene07Load();
     }
 
 // ------------------------------ END: OTHER FUNCTIONS ------------------------------
