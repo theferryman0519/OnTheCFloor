@@ -72,6 +72,16 @@ public class Buttons06 : MonoBehaviour {
     public AudioSource PianoNoteF5;
     public AudioSource PianoNoteG5;
 
+    // Particle Systems
+    public ParticleSystem BubblesA;
+    public ParticleSystem BubblesB;
+    public ParticleSystem BubblesC;
+    public ParticleSystem BubblesD;
+    public ParticleSystem BubblesE;
+    public ParticleSystem BubblesF;
+    public ParticleSystem BubblesG;
+    public ParticleSystem BubblesOctave;
+
 // -------------------- PRIVATE VARIABLES --------------------
 
 
@@ -315,11 +325,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteA5.volume = 3.0f;
             PianoNoteA5.Play();
+            BubblesA.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteA4.volume = 3.0f;
             PianoNoteA4.Play();
+            BubblesA.Play();
         }
     }
 
@@ -351,11 +363,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteB5.volume = 3.0f;
             PianoNoteB5.Play();
+            BubblesB.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteB4.volume = 3.0f;
             PianoNoteB4.Play();
+            BubblesB.Play();
         }
     }
 
@@ -387,11 +401,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteC5.volume = 3.0f;
             PianoNoteC5.Play();
+            BubblesC.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteC4.volume = 3.0f;
             PianoNoteC4.Play();
+            BubblesC.Play();
         }
     }
 
@@ -423,11 +439,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteD5.volume = 3.0f;
             PianoNoteD5.Play();
+            BubblesD.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteD4.volume = 3.0f;
             PianoNoteD4.Play();
+            BubblesD.Play();
         }
     }
 
@@ -459,11 +477,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteE5.volume = 3.0f;
             PianoNoteE5.Play();
+            BubblesE.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteE4.volume = 3.0f;
             PianoNoteE4.Play();
+            BubblesE.Play();
         }
     }
 
@@ -495,11 +515,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteF5.volume = 3.0f;
             PianoNoteF5.Play();
+            BubblesF.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteF4.volume = 3.0f;
             PianoNoteF4.Play();
+            BubblesF.Play();
         }
     }
 
@@ -531,22 +553,19 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteG5.volume = 3.0f;
             PianoNoteG5.Play();
+            BubblesG.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteG4.volume = 3.0f;
             PianoNoteG4.Play();
+            BubblesG.Play();
         }
     }
 
     public void BubbleNotesOctaveOffClicking() {
-        if ((EnableObjects06.CoralAOnOff == 1) || (EnableObjects06.CoralBOnOff == 1) || (EnableObjects06.CoralCOnOff == 1) || (EnableObjects06.CoralDOnOff == 1) || (EnableObjects06.CoralEOnOff == 1) || (EnableObjects06.CoralFOnOff == 1) || (EnableObjects06.CoralGOnOff == 1)) {
-            EnableObjects06.CoralOctaveOnOff = 1;
-        }
-
-        else {
-            EnableObjects06.CoralOctaveOnOff = 0;
-        }
+        EnableObjects06.CoralOctaveOnOff = 1;
+        BubblesOctave.Play();
     }
 
     public void BubbleNotesAOnClicking() {
@@ -557,11 +576,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralAOnOff = 0;
-        PianoNoteA4.volume = 0.0f;
-        PianoNoteA5.volume = 0.0f;
+        EnableObjects06.CoralAOnOff = 1;
+
         PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
         PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteA5.volume = 3.0f;
+            PianoNoteA5.Play();
+            BubblesA.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteA4.volume = 3.0f;
+            PianoNoteA4.Play();
+            BubblesA.Play();
+        }
     }
 
     public void BubbleNotesBOnClicking() {
@@ -572,11 +614,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralBOnOff = 0;
-        PianoNoteB4.volume = 0.0f;
-        PianoNoteB5.volume = 0.0f;
+        EnableObjects06.CoralBOnOff = 1;
+
+        PianoNoteA4.Stop();
         PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
         PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteB5.volume = 3.0f;
+            PianoNoteB5.Play();
+            BubblesB.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteB4.volume = 3.0f;
+            PianoNoteB4.Play();
+            BubblesB.Play();
+        }
     }
 
     public void BubbleNotesCOnClicking() {
@@ -587,11 +652,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralCOnOff = 0;
-        PianoNoteC4.volume = 0.0f;
-        PianoNoteC5.volume = 0.0f;
+        EnableObjects06.CoralCOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
         PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
         PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteC5.volume = 3.0f;
+            PianoNoteC5.Play();
+            BubblesC.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteC4.volume = 3.0f;
+            PianoNoteC4.Play();
+            BubblesC.Play();
+        }
     }
 
     public void BubbleNotesDOnClicking() {
@@ -602,11 +690,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralDOnOff = 0;
-        PianoNoteD4.volume = 0.0f;
-        PianoNoteD5.volume = 0.0f;
+        EnableObjects06.CoralDOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
         PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
         PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteD5.volume = 3.0f;
+            PianoNoteD5.Play();
+            BubblesD.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteD4.volume = 3.0f;
+            PianoNoteD4.Play();
+            BubblesD.Play();
+        }
     }
 
     public void BubbleNotesEOnClicking() {
@@ -617,11 +728,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralEOnOff = 0;
-        PianoNoteE4.volume = 0.0f;
-        PianoNoteE5.volume = 0.0f;
+        EnableObjects06.CoralEOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
         PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
         PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteE5.volume = 3.0f;
+            PianoNoteE5.Play();
+            BubblesE.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteE4.volume = 3.0f;
+            PianoNoteE4.Play();
+            BubblesE.Play();
+        }
     }
 
     public void BubbleNotesFOnClicking() {
@@ -632,11 +766,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralFOnOff = 0;
-        PianoNoteF4.volume = 0.0f;
-        PianoNoteF5.volume = 0.0f;
+        EnableObjects06.CoralFOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
         PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
         PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteF5.volume = 3.0f;
+            PianoNoteF5.Play();
+            BubblesF.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteF4.volume = 3.0f;
+            PianoNoteF4.Play();
+            BubblesF.Play();
+        }
     }
 
     public void BubbleNotesGOnClicking() {
@@ -647,11 +804,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralGOnOff = 0;
-        PianoNoteG4.volume = 0.0f;
-        PianoNoteG5.volume = 0.0f;
+        EnableObjects06.CoralGOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
         PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
         PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteG5.volume = 3.0f;
+            PianoNoteG5.Play();
+            BubblesG.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteG4.volume = 3.0f;
+            PianoNoteG4.Play();
+            BubblesG.Play();
+        }
     }
 
     public void BubbleNotesOctaveOnClicking() {
@@ -686,11 +866,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteA5.volume = 3.0f;
             PianoNoteA5.Play();
+            BubblesA.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteA4.volume = 3.0f;
             PianoNoteA4.Play();
+            BubblesA.Play();
         }
     }
 
@@ -722,11 +904,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteB5.volume = 3.0f;
             PianoNoteB5.Play();
+            BubblesB.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteB4.volume = 3.0f;
             PianoNoteB4.Play();
+            BubblesB.Play();
         }
     }
 
@@ -758,11 +942,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteC5.volume = 3.0f;
             PianoNoteC5.Play();
+            BubblesC.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteC4.volume = 3.0f;
             PianoNoteC4.Play();
+            BubblesC.Play();
         }
     }
 
@@ -794,11 +980,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteD5.volume = 3.0f;
             PianoNoteD5.Play();
+            BubblesD.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteD4.volume = 3.0f;
             PianoNoteD4.Play();
+            BubblesD.Play();
         }
     }
 
@@ -830,11 +1018,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteE5.volume = 3.0f;
             PianoNoteE5.Play();
+            BubblesE.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteE4.volume = 3.0f;
             PianoNoteE4.Play();
+            BubblesE.Play();
         }
     }
 
@@ -866,11 +1056,13 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteF5.volume = 3.0f;
             PianoNoteF5.Play();
+            BubblesF.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteF4.volume = 3.0f;
             PianoNoteF4.Play();
+            BubblesF.Play();
         }
     }
 
@@ -902,22 +1094,19 @@ public class Buttons06 : MonoBehaviour {
         if (EnableObjects06.CoralOctaveOnOff == 1) {
             PianoNoteG5.volume = 3.0f;
             PianoNoteG5.Play();
+            BubblesG.Play();
         }
 
         else if (EnableObjects06.CoralOctaveOnOff == 0) {
             PianoNoteG4.volume = 3.0f;
             PianoNoteG4.Play();
+            BubblesG.Play();
         }
     }
 
     public void CoralOctaveOffClicking() {
-        if ((EnableObjects06.CoralAOnOff == 1) || (EnableObjects06.CoralBOnOff == 1) || (EnableObjects06.CoralCOnOff == 1) || (EnableObjects06.CoralDOnOff == 1) || (EnableObjects06.CoralEOnOff == 1) || (EnableObjects06.CoralFOnOff == 1) || (EnableObjects06.CoralGOnOff == 1)) {
-            EnableObjects06.CoralOctaveOnOff = 1;
-        }
-
-        else {
-            EnableObjects06.CoralOctaveOnOff = 0;
-        }
+        EnableObjects06.CoralOctaveOnOff = 1;
+        BubblesOctave.Play();
     }
 
     public void CoralAOnClicking() {
@@ -928,11 +1117,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralAOnOff = 0;
-        PianoNoteA4.volume = 0.0f;
-        PianoNoteA5.volume = 0.0f;
+        EnableObjects06.CoralAOnOff = 1;
+
         PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
         PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteA5.volume = 3.0f;
+            PianoNoteA5.Play();
+            BubblesA.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteA4.volume = 3.0f;
+            PianoNoteA4.Play();
+            BubblesA.Play();
+        }
     }
 
     public void CoralBOnClicking() {
@@ -943,11 +1155,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralBOnOff = 0;
-        PianoNoteB4.volume = 0.0f;
-        PianoNoteB5.volume = 0.0f;
+        EnableObjects06.CoralBOnOff = 1;
+
+        PianoNoteA4.Stop();
         PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
         PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteB5.volume = 3.0f;
+            PianoNoteB5.Play();
+            BubblesB.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteB4.volume = 3.0f;
+            PianoNoteB4.Play();
+            BubblesB.Play();
+        }
     }
 
     public void CoralCOnClicking() {
@@ -958,11 +1193,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralCOnOff = 0;
-        PianoNoteC4.volume = 0.0f;
-        PianoNoteC5.volume = 0.0f;
+        EnableObjects06.CoralCOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
         PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
         PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteC5.volume = 3.0f;
+            PianoNoteC5.Play();
+            BubblesC.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteC4.volume = 3.0f;
+            PianoNoteC4.Play();
+            BubblesC.Play();
+        }
     }
 
     public void CoralDOnClicking() {
@@ -973,11 +1231,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralDOnOff = 0;
-        PianoNoteD4.volume = 0.0f;
-        PianoNoteD5.volume = 0.0f;
+        EnableObjects06.CoralDOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
         PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
         PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteD5.volume = 3.0f;
+            PianoNoteD5.Play();
+            BubblesD.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteD4.volume = 3.0f;
+            PianoNoteD4.Play();
+            BubblesD.Play();
+        }
     }
 
     public void CoralEOnClicking() {
@@ -988,11 +1269,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralEOnOff = 0;
-        PianoNoteE4.volume = 0.0f;
-        PianoNoteE5.volume = 0.0f;
+        EnableObjects06.CoralEOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
         PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
         PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteE5.volume = 3.0f;
+            PianoNoteE5.Play();
+            BubblesE.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteE4.volume = 3.0f;
+            PianoNoteE4.Play();
+            BubblesE.Play();
+        }
     }
 
     public void CoralFOnClicking() {
@@ -1003,11 +1307,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralFOnOff = 0;
-        PianoNoteF4.volume = 0.0f;
-        PianoNoteF5.volume = 0.0f;
+        EnableObjects06.CoralFOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
         PianoNoteF4.Stop();
+        PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
         PianoNoteF5.Stop();
+        PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteF5.volume = 3.0f;
+            PianoNoteF5.Play();
+            BubblesF.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteF4.volume = 3.0f;
+            PianoNoteF4.Play();
+            BubblesF.Play();
+        }
     }
 
     public void CoralGOnClicking() {
@@ -1018,12 +1345,34 @@ public class Buttons06 : MonoBehaviour {
         EnableObjects06.CoralEOnOff = 0;
         EnableObjects06.CoralFOnOff = 0;
         EnableObjects06.CoralGOnOff = 0;
-        EnableObjects06.CoralOctaveOnOff = 0;
-        EnableObjects06.CoralGOnOff = 0;
-        PianoNoteG4.volume = 0.0f;
-        PianoNoteG5.volume = 0.0f;
+        EnableObjects06.CoralGOnOff = 1;
+
+        PianoNoteA4.Stop();
+        PianoNoteB4.Stop();
+        PianoNoteC4.Stop();
+        PianoNoteD4.Stop();
+        PianoNoteE4.Stop();
+        PianoNoteF4.Stop();
         PianoNoteG4.Stop();
+        PianoNoteA5.Stop();
+        PianoNoteB5.Stop();
+        PianoNoteC5.Stop();
+        PianoNoteD5.Stop();
+        PianoNoteE5.Stop();
+        PianoNoteF5.Stop();
         PianoNoteG5.Stop();
+
+        if (EnableObjects06.CoralOctaveOnOff == 1) {
+            PianoNoteG5.volume = 3.0f;
+            PianoNoteG5.Play();
+            BubblesG.Play();
+        }
+
+        else if (EnableObjects06.CoralOctaveOnOff == 0) {
+            PianoNoteG4.volume = 3.0f;
+            PianoNoteG4.Play();
+            BubblesG.Play();
+        }
     }
 
     public void CoralOctaveOnClicking() {

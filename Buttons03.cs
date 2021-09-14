@@ -77,6 +77,16 @@ public class Buttons03 : MonoBehaviour {
     public AudioSource PianoNoteF5;
     public AudioSource PianoNoteG5;
 
+    // Particle Systems
+    public ParticleSystem BubblesA;
+    public ParticleSystem BubblesB;
+    public ParticleSystem BubblesC;
+    public ParticleSystem BubblesD;
+    public ParticleSystem BubblesE;
+    public ParticleSystem BubblesF;
+    public ParticleSystem BubblesG;
+    public ParticleSystem BubblesOctave;
+
 // -------------------- PRIVATE VARIABLES --------------------
 
 
@@ -335,6 +345,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 8) {
                 PianoNoteA5.volume = 3.0f;
                 PianoNoteA5.Play();
+                BubblesA.Play();
                 EnableObjects03.ActionNoteInt = 9;
             }
         }
@@ -343,6 +354,7 @@ public class Buttons03 : MonoBehaviour {
             if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 15)) {
                 PianoNoteA4.volume = 3.0f;
                 PianoNoteA4.Play();
+                BubblesA.Play();
 
                 if (EnableObjects03.ActionNoteInt == 1) {
                     EnableObjects03.ActionNoteInt = 2;
@@ -386,6 +398,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 11) {
                 PianoNoteB5.volume = 3.0f;
                 PianoNoteB5.Play();
+                BubblesB.Play();
                 EnableObjects03.ActionNoteInt = 12;
             }
         }
@@ -394,6 +407,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 4) {
                 PianoNoteB4.volume = 3.0f;
                 PianoNoteB4.Play();
+                BubblesB.Play();
                 EnableObjects03.ActionNoteInt = 5;
             }
         }
@@ -430,6 +444,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 13) {
                 PianoNoteC5.volume = 3.0f;
                 PianoNoteC5.Play();
+                BubblesC.Play();
                 EnableObjects03.ActionNoteInt = 14;
             }
         }
@@ -438,6 +453,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 6) {
                 PianoNoteC4.volume = 3.0f;
                 PianoNoteC4.Play();
+                BubblesC.Play();
                 EnableObjects03.ActionNoteInt = 7;
             }
         }
@@ -474,6 +490,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 10) {
                 PianoNoteD5.volume = 3.0f;
                 PianoNoteD5.Play();
+                BubblesD.Play();
                 EnableObjects03.ActionNoteInt = 11;
             }
         }
@@ -482,6 +499,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 2) {
                 PianoNoteD4.volume = 3.0f;
                 PianoNoteD4.Play();
+                BubblesD.Play();
                 EnableObjects03.ActionNoteInt = 3;
             }
         }
@@ -518,6 +536,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 14) {
                 PianoNoteE5.volume = 3.0f;
                 PianoNoteE5.Play();
+                BubblesE.Play();
                 EnableObjects03.ActionNoteInt = 15;
             }
         }
@@ -526,6 +545,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 5) {
                 PianoNoteE4.volume = 3.0f;
                 PianoNoteE4.Play();
+                BubblesE.Play();
                 EnableObjects03.ActionNoteInt = 6;
             }
         }
@@ -562,6 +582,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 12) {
                 PianoNoteF5.volume = 3.0f;
                 PianoNoteF5.Play();
+                BubblesF.Play();
                 EnableObjects03.ActionNoteInt = 13;
             }
         }
@@ -570,6 +591,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 7) {
                 PianoNoteF4.volume = 3.0f;
                 PianoNoteF4.Play();
+                BubblesF.Play();
                 EnableObjects03.ActionNoteInt = 8;
             }
         }
@@ -606,6 +628,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 9) {
                 PianoNoteG5.volume = 3.0f;
                 PianoNoteG5.Play();
+                BubblesG.Play();
                 EnableObjects03.ActionNoteInt = 10;
             }
         }
@@ -614,124 +637,344 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 3) {
                 PianoNoteG4.volume = 3.0f;
                 PianoNoteG4.Play();
+                BubblesG.Play();
                 EnableObjects03.ActionNoteInt = 4;
             }
         }
     }
 
     public void BubbleNotesOctaveOffClicking() {
-        if ((EnableObjects03.CoralAOnOff == 1) || (EnableObjects03.CoralBOnOff == 1) || (EnableObjects03.CoralCOnOff == 1) || (EnableObjects03.CoralDOnOff == 1) || (EnableObjects03.CoralEOnOff == 1) || (EnableObjects03.CoralFOnOff == 1) || (EnableObjects03.CoralGOnOff == 1)) {
-            EnableObjects03.CoralOctaveOnOff = 1;
-        }
-
-        else {
-            EnableObjects03.CoralOctaveOnOff = 0;
-        }
+        EnableObjects03.CoralOctaveOnOff = 1;
+        BubblesOctave.Play();
     }
 
     public void BubbleNotesAOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralAOnOff = 0;
-        PianoNoteA4.volume = 0.0f;
-        PianoNoteA5.volume = 0.0f;
-        PianoNoteA4.Stop();
-        PianoNoteA5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 8) || (EnableObjects03.ActionNoteInt == 15)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralAOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 8) {
+                PianoNoteA5.volume = 3.0f;
+                PianoNoteA5.Play();
+                BubblesA.Play();
+                EnableObjects03.ActionNoteInt = 9;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 15)) {
+                PianoNoteA4.volume = 3.0f;
+                PianoNoteA4.Play();
+                BubblesA.Play();
+
+                if (EnableObjects03.ActionNoteInt == 1) {
+                    EnableObjects03.ActionNoteInt = 2;
+                }
+
+                else if (EnableObjects03.ActionNoteInt == 15) {
+                    EnableObjects03.ActionNoteInt = 16;
+                }
+            }
+        }
     }
 
     public void BubbleNotesBOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        PianoNoteB4.volume = 0.0f;
-        PianoNoteB5.volume = 0.0f;
-        PianoNoteB4.Stop();
-        PianoNoteB5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 4) || (EnableObjects03.ActionNoteInt == 11)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralBOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 11) {
+                PianoNoteB5.volume = 3.0f;
+                PianoNoteB5.Play();
+                BubblesB.Play();
+                EnableObjects03.ActionNoteInt = 12;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 4) {
+                PianoNoteB4.volume = 3.0f;
+                PianoNoteB4.Play();
+                BubblesB.Play();
+                EnableObjects03.ActionNoteInt = 5;
+            }
+        }
     }
 
     public void BubbleNotesCOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        PianoNoteC4.volume = 0.0f;
-        PianoNoteC5.volume = 0.0f;
-        PianoNoteC4.Stop();
-        PianoNoteC5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 6) || (EnableObjects03.ActionNoteInt == 13)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralCOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 13) {
+                PianoNoteC5.volume = 3.0f;
+                PianoNoteC5.Play();
+                BubblesC.Play();
+                EnableObjects03.ActionNoteInt = 14;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 6) {
+                PianoNoteC4.volume = 3.0f;
+                PianoNoteC4.Play();
+                BubblesC.Play();
+                EnableObjects03.ActionNoteInt = 7;
+            }
+        }
     }
 
     public void BubbleNotesDOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        PianoNoteD4.volume = 0.0f;
-        PianoNoteD5.volume = 0.0f;
-        PianoNoteD4.Stop();
-        PianoNoteD5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 2) || (EnableObjects03.ActionNoteInt == 10)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralDOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 10) {
+                PianoNoteD5.volume = 3.0f;
+                PianoNoteD5.Play();
+                BubblesD.Play();
+                EnableObjects03.ActionNoteInt = 11;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 2) {
+                PianoNoteD4.volume = 3.0f;
+                PianoNoteD4.Play();
+                BubblesD.Play();
+                EnableObjects03.ActionNoteInt = 3;
+            }
+        }
     }
 
     public void BubbleNotesEOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        PianoNoteE4.volume = 0.0f;
-        PianoNoteE5.volume = 0.0f;
-        PianoNoteE4.Stop();
-        PianoNoteE5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 5) || (EnableObjects03.ActionNoteInt == 14)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralEOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 14) {
+                PianoNoteE5.volume = 3.0f;
+                PianoNoteE5.Play();
+                BubblesE.Play();
+                EnableObjects03.ActionNoteInt = 15;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 5) {
+                PianoNoteE4.volume = 3.0f;
+                PianoNoteE4.Play();
+                BubblesE.Play();
+                EnableObjects03.ActionNoteInt = 6;
+            }
+        }
     }
 
     public void BubbleNotesFOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        PianoNoteF4.volume = 0.0f;
-        PianoNoteF5.volume = 0.0f;
-        PianoNoteF4.Stop();
-        PianoNoteF5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 7) || (EnableObjects03.ActionNoteInt == 12)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralFOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 12) {
+                PianoNoteF5.volume = 3.0f;
+                PianoNoteF5.Play();
+                BubblesF.Play();
+                EnableObjects03.ActionNoteInt = 13;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 7) {
+                PianoNoteF4.volume = 3.0f;
+                PianoNoteF4.Play();
+                BubblesF.Play();
+                EnableObjects03.ActionNoteInt = 8;
+            }
+        }
     }
 
     public void BubbleNotesGOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        PianoNoteG4.volume = 0.0f;
-        PianoNoteG5.volume = 0.0f;
-        PianoNoteG4.Stop();
-        PianoNoteG5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 3) || (EnableObjects03.ActionNoteInt == 9)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralGOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 9) {
+                PianoNoteG5.volume = 3.0f;
+                PianoNoteG5.Play();
+                BubblesG.Play();
+                EnableObjects03.ActionNoteInt = 10;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 3) {
+                PianoNoteG4.volume = 3.0f;
+                PianoNoteG4.Play();
+                BubblesG.Play();
+                EnableObjects03.ActionNoteInt = 4;
+            }
+        }
     }
 
     public void BubbleNotesOctaveOnClicking() {
@@ -769,6 +1012,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 8) {
                 PianoNoteA5.volume = 3.0f;
                 PianoNoteA5.Play();
+                BubblesA.Play();
                 EnableObjects03.ActionNoteInt = 9;
             }
         }
@@ -777,6 +1021,7 @@ public class Buttons03 : MonoBehaviour {
             if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 15)) {
                 PianoNoteA4.volume = 3.0f;
                 PianoNoteA4.Play();
+                BubblesA.Play();
 
                 if (EnableObjects03.ActionNoteInt == 1) {
                     EnableObjects03.ActionNoteInt = 2;
@@ -820,6 +1065,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 11) {
                 PianoNoteB5.volume = 3.0f;
                 PianoNoteB5.Play();
+                BubblesB.Play();
                 EnableObjects03.ActionNoteInt = 12;
             }
         }
@@ -828,6 +1074,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 4) {
                 PianoNoteB4.volume = 3.0f;
                 PianoNoteB4.Play();
+                BubblesB.Play();
                 EnableObjects03.ActionNoteInt = 5;
             }
         }
@@ -864,6 +1111,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 13) {
                 PianoNoteC5.volume = 3.0f;
                 PianoNoteC5.Play();
+                BubblesC.Play();
                 EnableObjects03.ActionNoteInt = 14;
             }
         }
@@ -872,6 +1120,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 6) {
                 PianoNoteC4.volume = 3.0f;
                 PianoNoteC4.Play();
+                BubblesC.Play();
                 EnableObjects03.ActionNoteInt = 7;
             }
         }
@@ -908,6 +1157,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 10) {
                 PianoNoteD5.volume = 3.0f;
                 PianoNoteD5.Play();
+                BubblesD.Play();
                 EnableObjects03.ActionNoteInt = 11;
             }
         }
@@ -916,6 +1166,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 2) {
                 PianoNoteD4.volume = 3.0f;
                 PianoNoteD4.Play();
+                BubblesD.Play();
                 EnableObjects03.ActionNoteInt = 3;
             }
         }
@@ -952,6 +1203,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 14) {
                 PianoNoteE5.volume = 3.0f;
                 PianoNoteE5.Play();
+                BubblesE.Play();
                 EnableObjects03.ActionNoteInt = 15;
             }
         }
@@ -960,6 +1212,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 5) {
                 PianoNoteE4.volume = 3.0f;
                 PianoNoteE4.Play();
+                BubblesE.Play();
                 EnableObjects03.ActionNoteInt = 6;
             }
         }
@@ -996,6 +1249,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 12) {
                 PianoNoteF5.volume = 3.0f;
                 PianoNoteF5.Play();
+                BubblesF.Play();
                 EnableObjects03.ActionNoteInt = 13;
             }
         }
@@ -1004,6 +1258,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 7) {
                 PianoNoteF4.volume = 3.0f;
                 PianoNoteF4.Play();
+                BubblesF.Play();
                 EnableObjects03.ActionNoteInt = 8;
             }
         }
@@ -1040,6 +1295,7 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 9) {
                 PianoNoteG5.volume = 3.0f;
                 PianoNoteG5.Play();
+                BubblesG.Play();
                 EnableObjects03.ActionNoteInt = 10;
             }
         }
@@ -1048,125 +1304,344 @@ public class Buttons03 : MonoBehaviour {
             if (EnableObjects03.ActionNoteInt == 3) {
                 PianoNoteG4.volume = 3.0f;
                 PianoNoteG4.Play();
+                BubblesG.Play();
                 EnableObjects03.ActionNoteInt = 4;
             }
         }
     }
 
     public void CoralOctaveOffClicking() {
-        if ((EnableObjects03.CoralAOnOff == 1) || (EnableObjects03.CoralBOnOff == 1) || (EnableObjects03.CoralCOnOff == 1) || (EnableObjects03.CoralDOnOff == 1) || (EnableObjects03.CoralEOnOff == 1) || (EnableObjects03.CoralFOnOff == 1) || (EnableObjects03.CoralGOnOff == 1)) {
-            EnableObjects03.CoralOctaveOnOff = 1;
-        }
-
-        else {
-            EnableObjects03.CoralOctaveOnOff = 0;
-        }
+        EnableObjects03.CoralOctaveOnOff = 1;
+        BubblesOctave.Play();
     }
 
     public void CoralAOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralAOnOff = 0;
-        PianoNoteA4.volume = 0.0f;
-        PianoNoteA5.volume = 0.0f;
-        PianoNoteA4.Stop();
-        PianoNoteA5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 8) || (EnableObjects03.ActionNoteInt == 15)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralAOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 8) {
+                PianoNoteA5.volume = 3.0f;
+                PianoNoteA5.Play();
+                BubblesA.Play();
+                EnableObjects03.ActionNoteInt = 9;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if ((EnableObjects03.ActionNoteInt == 1) || (EnableObjects03.ActionNoteInt == 15)) {
+                PianoNoteA4.volume = 3.0f;
+                PianoNoteA4.Play();
+                BubblesA.Play();
+
+                if (EnableObjects03.ActionNoteInt == 1) {
+                    EnableObjects03.ActionNoteInt = 2;
+                }
+
+                else if (EnableObjects03.ActionNoteInt == 15) {
+                    EnableObjects03.ActionNoteInt = 16;
+                }
+            }
+        }
     }
 
     public void CoralBOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        PianoNoteB4.volume = 0.0f;
-        PianoNoteB5.volume = 0.0f;
-        PianoNoteB4.Stop();
-        PianoNoteB5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 4) || (EnableObjects03.ActionNoteInt == 11)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralBOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 11) {
+                PianoNoteB5.volume = 3.0f;
+                PianoNoteB5.Play();
+                BubblesB.Play();
+                EnableObjects03.ActionNoteInt = 12;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 4) {
+                PianoNoteB4.volume = 3.0f;
+                PianoNoteB4.Play();
+                BubblesB.Play();
+                EnableObjects03.ActionNoteInt = 5;
+            }
+        }
     }
 
     public void CoralCOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        PianoNoteC4.volume = 0.0f;
-        PianoNoteC5.volume = 0.0f;
-        PianoNoteC4.Stop();
-        PianoNoteC5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 6) || (EnableObjects03.ActionNoteInt == 13)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralCOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 13) {
+                PianoNoteC5.volume = 3.0f;
+                PianoNoteC5.Play();
+                BubblesC.Play();
+                EnableObjects03.ActionNoteInt = 14;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 6) {
+                PianoNoteC4.volume = 3.0f;
+                PianoNoteC4.Play();
+                BubblesC.Play();
+                EnableObjects03.ActionNoteInt = 7;
+            }
+        }
     }
 
     public void CoralDOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        PianoNoteD4.volume = 0.0f;
-        PianoNoteD5.volume = 0.0f;
-        PianoNoteD4.Stop();
-        PianoNoteD5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 2) || (EnableObjects03.ActionNoteInt == 10)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralDOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 10) {
+                PianoNoteD5.volume = 3.0f;
+                PianoNoteD5.Play();
+                BubblesD.Play();
+                EnableObjects03.ActionNoteInt = 11;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 2) {
+                PianoNoteD4.volume = 3.0f;
+                PianoNoteD4.Play();
+                BubblesD.Play();
+                EnableObjects03.ActionNoteInt = 3;
+            }
+        }
     }
 
     public void CoralEOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        PianoNoteE4.volume = 0.0f;
-        PianoNoteE5.volume = 0.0f;
-        PianoNoteE4.Stop();
-        PianoNoteE5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 5) || (EnableObjects03.ActionNoteInt == 14)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralEOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 14) {
+                PianoNoteE5.volume = 3.0f;
+                PianoNoteE5.Play();
+                BubblesE.Play();
+                EnableObjects03.ActionNoteInt = 15;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 5) {
+                PianoNoteE4.volume = 3.0f;
+                PianoNoteE4.Play();
+                BubblesE.Play();
+                EnableObjects03.ActionNoteInt = 6;
+            }
+        }
     }
 
     public void CoralFOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        PianoNoteF4.volume = 0.0f;
-        PianoNoteF5.volume = 0.0f;
-        PianoNoteF4.Stop();
-        PianoNoteF5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 7) || (EnableObjects03.ActionNoteInt == 12)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralFOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 12) {
+                PianoNoteF5.volume = 3.0f;
+                PianoNoteF5.Play();
+                BubblesF.Play();
+                EnableObjects03.ActionNoteInt = 13;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 7) {
+                PianoNoteF4.volume = 3.0f;
+                PianoNoteF4.Play();
+                BubblesF.Play();
+                EnableObjects03.ActionNoteInt = 8;
+            }
+        }
     }
 
     public void CoralGOnClicking() {
-        EnableObjects03.CoralAOnOff = 0;
-        EnableObjects03.CoralBOnOff = 0;
-        EnableObjects03.CoralCOnOff = 0;
-        EnableObjects03.CoralDOnOff = 0;
-        EnableObjects03.CoralEOnOff = 0;
-        EnableObjects03.CoralFOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        EnableObjects03.CoralOctaveOnOff = 0;
-        EnableObjects03.CoralGOnOff = 0;
-        PianoNoteG4.volume = 0.0f;
-        PianoNoteG5.volume = 0.0f;
-        PianoNoteG4.Stop();
-        PianoNoteG5.Stop();
+        if ((EnableObjects03.ActionNoteInt == 3) || (EnableObjects03.ActionNoteInt == 9)) {
+            EnableObjects03.CoralAOnOff = 0;
+            EnableObjects03.CoralBOnOff = 0;
+            EnableObjects03.CoralCOnOff = 0;
+            EnableObjects03.CoralDOnOff = 0;
+            EnableObjects03.CoralEOnOff = 0;
+            EnableObjects03.CoralFOnOff = 0;
+            EnableObjects03.CoralGOnOff = 0;
+            EnableObjects03.CoralGOnOff = 1;
+
+            PianoNoteA4.Stop();
+            PianoNoteB4.Stop();
+            PianoNoteC4.Stop();
+            PianoNoteD4.Stop();
+            PianoNoteE4.Stop();
+            PianoNoteF4.Stop();
+            PianoNoteG4.Stop();
+            PianoNoteA5.Stop();
+            PianoNoteB5.Stop();
+            PianoNoteC5.Stop();
+            PianoNoteD5.Stop();
+            PianoNoteE5.Stop();
+            PianoNoteF5.Stop();
+            PianoNoteG5.Stop();
+        }
+
+        if (EnableObjects03.CoralOctaveOnOff == 1) {
+            if (EnableObjects03.ActionNoteInt == 9) {
+                PianoNoteG5.volume = 3.0f;
+                PianoNoteG5.Play();
+                BubblesG.Play();
+                EnableObjects03.ActionNoteInt = 10;
+            }
+        }
+
+        else if (EnableObjects03.CoralOctaveOnOff == 0) {
+            if (EnableObjects03.ActionNoteInt == 3) {
+                PianoNoteG4.volume = 3.0f;
+                PianoNoteG4.Play();
+                BubblesG.Play();
+                EnableObjects03.ActionNoteInt = 4;
+            }
+        }
     }
 
     public void CoralOctaveOnClicking() {

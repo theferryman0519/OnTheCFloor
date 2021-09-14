@@ -59,7 +59,7 @@ public class PlaySounds : MonoBehaviour {
 // -------------------- UPDATE FUNCTION --------------------
     void Update() {
         if (BackgroundMusicIsMute == 0) {
-            BackgroundMusic.volume = 0.15f;
+            BackgroundMusic.volume = 0.05f;
         }
 
         else if (BackgroundMusicIsMute == 1) {

@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
-public class EnableObjects03 : MonoBehaviour {
+public class EnableObjects04 : MonoBehaviour {
 
 // ------------------------------ START: LIST OF VARIABLES ------------------------------
 // -------------------- PUBLIC VARIABLES --------------------
@@ -66,20 +66,7 @@ public class EnableObjects03 : MonoBehaviour {
 
     // Action Texts
     public Text ActionText;
-    public Text ActionNoteText;
-
-    // Intro Panel
-    public Image BackgroundOverlay;
-    public Image IntroPanel;
-    public Text IntroTitleText;
-    public Text IntroTextA;
-    public Text IntroTextB;
-    public Image IntroImageB;
-    public Text IntroTextC;
-    public Text IntroTextD;
-    public Image IntroPriorButton;
-    public Image IntroNextButton;
-    public Image IntroPlayButton;
+    public Text ResultsText;
 
     // Settings Panel
     public Image BackgroundOverlaySettings;
@@ -104,7 +91,6 @@ public class EnableObjects03 : MonoBehaviour {
     public static int CoralOctaveOnOff;
     public static int SettingPanelOnOff;
     public static int SettingNotesOnOff;
-    public static int ActionNoteInt;
 
 // ------------------------------ END: LIST OF VARIABLES ------------------------------
 // ------------------------------ START: CALLING OTHER SCRIPTS ------------------------------
@@ -128,9 +114,8 @@ public class EnableObjects03 : MonoBehaviour {
         CoralOctaveOnOff = 0;
         SettingPanelOnOff = 0;
         SettingNotesOnOff = 0;
-        ActionNoteInt = 1;
 
-        PlaySounds.BackgroundMusicIsMute = 1;
+        PlaySounds.BackgroundMusicIsMute = 0;
     }
 
 // -------------------- AWAKE FUNCTION --------------------
@@ -140,10 +125,16 @@ public class EnableObjects03 : MonoBehaviour {
 
 // -------------------- UPDATE FUNCTION --------------------
     void Update() {
-        IntroPanelUpdate();
         CoralOnOffUpdate();
         SettingPanelUpdate();
-        ActionTextsUpdate();
+
+        if (Buttons04.CheckCorrectInt == 0) {
+            DisableResultsText();
+        }
+
+        else {
+            EnableResultsText();
+        }
     }
 
 // ------------------------------ END: CALLING INITIAL FUNCTIONS ------------------------------
@@ -348,6 +339,10 @@ public class EnableObjects03 : MonoBehaviour {
         }
     }
 
+    public void EnableResultsText() {
+        ResultsText.enabled = true;
+    }
+
     public void EnableDuke() {
         DukeBody.enabled = true;
         DukeArmA.enabled = true;
@@ -359,37 +354,6 @@ public class EnableObjects03 : MonoBehaviour {
         DukeArmG.enabled = true;
         DukeArmOctave.enabled = true;
         ActionText.enabled = true;
-        ActionNoteText.enabled = true;
-    }
-
-    public void EnableIntroPanelMain() {
-        BackgroundOverlay.enabled = true;
-        IntroPanel.enabled = true;
-        IntroTitleText.enabled = true;
-    }
-
-    public void EnableIntroPanelSlideA() {
-        IntroTextA.enabled = true;
-        IntroNextButton.enabled = true;
-    }
-
-    public void EnableIntroPanelSlideB() {
-        IntroTextB.enabled = true;
-        IntroImageB.enabled = true;
-        IntroPriorButton.enabled = true;
-        IntroNextButton.enabled = true;
-    }
-
-    public void EnableIntroPanelSlideC() {
-        IntroTextC.enabled = true;
-        IntroPriorButton.enabled = true;
-        IntroNextButton.enabled = true;
-    }
-
-    public void EnableIntroPanelSlideD() {
-        IntroTextD.enabled = true;
-        IntroPriorButton.enabled = true;
-        IntroPlayButton.enabled = true;
     }
 
     public void EnableSettingsPanel() {
@@ -507,37 +471,10 @@ public class EnableObjects03 : MonoBehaviour {
         DukeArmG.enabled = false;
         DukeArmOctave.enabled = false;
         ActionText.enabled = false;
-        ActionNoteText.enabled = false;
     }
 
-    public void DisableIntroPanelMain() {
-        BackgroundOverlay.enabled = false;
-        IntroPanel.enabled = false;
-        IntroTitleText.enabled = false;
-    }
-
-    public void DisableIntroPanelSlideA() {
-        IntroTextA.enabled = false;
-        IntroNextButton.enabled = false;
-    }
-
-    public void DisableIntroPanelSlideB() {
-        IntroTextB.enabled = false;
-        IntroImageB.enabled = false;
-        IntroPriorButton.enabled = false;
-        IntroNextButton.enabled = false;
-    }
-
-    public void DisableIntroPanelSlideC() {
-        IntroTextC.enabled = false;
-        IntroPriorButton.enabled = false;
-        IntroNextButton.enabled = false;
-    }
-
-    public void DisableIntroPanelSlideD() {
-        IntroTextD.enabled = false;
-        IntroPriorButton.enabled = false;
-        IntroPlayButton.enabled = false;
+    public void DisableResultsText() {
+        ResultsText.enabled = false;
     }
 
     public void DisableSettingsPanel() {
@@ -557,54 +494,6 @@ public class EnableObjects03 : MonoBehaviour {
     }
 
 // -------------------- UPDATE FUNCTIONS --------------------
-    public void IntroPanelUpdate() {
-        if ((EnableObjects00.IntroSlideInt == 0) || (EnableObjects00.IntroSlideInt == 5)) {
-            DisableIntroPanelMain();
-            DisableIntroPanelSlideA();
-            DisableIntroPanelSlideB();
-            DisableIntroPanelSlideC();
-            DisableIntroPanelSlideD();
-
-            PlaySounds.BackgroundMusicIsMute = 0;
-        }
-
-        else if (EnableObjects00.IntroSlideInt == 1) {
-            DisableIntroPanelSlideB();
-            DisableIntroPanelSlideC();
-            DisableIntroPanelSlideD();
-
-            EnableIntroPanelMain();
-            EnableIntroPanelSlideA();
-        }
-
-        else if (EnableObjects00.IntroSlideInt == 2) {
-            DisableIntroPanelSlideA();
-            DisableIntroPanelSlideC();
-            DisableIntroPanelSlideD();
-
-            EnableIntroPanelMain();
-            EnableIntroPanelSlideB();
-        }
-
-        else if (EnableObjects00.IntroSlideInt == 3) {
-            DisableIntroPanelSlideA();
-            DisableIntroPanelSlideB();
-            DisableIntroPanelSlideD();
-
-            EnableIntroPanelMain();
-            EnableIntroPanelSlideC();
-        }
-
-        else if (EnableObjects00.IntroSlideInt == 4) {
-            DisableIntroPanelSlideA();
-            DisableIntroPanelSlideB();
-            DisableIntroPanelSlideC();
-
-            EnableIntroPanelMain();
-            EnableIntroPanelSlideD();
-        }
-    }
-
     public void SettingPanelUpdate() {
         if (SettingPanelOnOff == 0) {
             DisableSettingsPanel();
@@ -716,88 +605,6 @@ public class EnableObjects03 : MonoBehaviour {
         else if (CoralOctaveOnOff == 1) {
             DisableCoralOctaveOff();
             EnableCoralOctaveOn();
-        }
-    }
-
-    public void ActionTextsUpdate() {
-        if (ActionNoteInt == 1) {
-            ActionText.text = "Click the coral that corresponds with the note above Duke.";
-            ActionNoteText.text = "A";
-        }
-
-        else if (ActionNoteInt == 2) {
-            ActionText.text = "Very good! Keep following along with the notes above Duke.";
-            ActionNoteText.text = "D";
-        }
-
-        else if (ActionNoteInt == 3) {
-            ActionText.text = "Click the coral that corresponds with the note above Duke.";
-            ActionNoteText.text = "G";
-        }
-
-        else if (ActionNoteInt == 4) {
-            ActionText.text = "Click the coral that corresponds with the note above Duke.";
-            ActionNoteText.text = "B";
-        }
-
-        else if (ActionNoteInt == 5) {
-            ActionText.text = "Click the coral that corresponds with the note above Duke.";
-            ActionNoteText.text = "E";
-        }
-
-        else if (ActionNoteInt == 6) {
-            ActionText.text = "Click the coral that corresponds with the note above Duke.";
-            ActionNoteText.text = "C";
-        }
-
-        else if (ActionNoteInt == 7) {
-            ActionText.text = "Click the coral that corresponds with the note above Duke.";
-            ActionNoteText.text = "F";
-        }
-
-        else if (ActionNoteInt == 8) {
-            ActionText.text = "Awesome job! Now, click the Octave coral to make your notes go higher.";
-            ActionNoteText.text = "Oct & A";
-        }
-
-        else if (ActionNoteInt == 9) {
-            ActionText.text = "Perfect! Just leave the Octave coral turned on to keep your notes higher.";
-            ActionNoteText.text = "G";
-        }
-
-        else if (ActionNoteInt == 10) {
-            ActionText.text = "Leave the Octave coral turned on to keep your notes higher.";
-            ActionNoteText.text = "D";
-        }
-
-        else if (ActionNoteInt == 11) {
-            ActionText.text = "Leave the Octave coral turned on to keep your notes higher.";
-            ActionNoteText.text = "B";
-        }
-
-        else if (ActionNoteInt == 12) {
-            ActionText.text = "Leave the Octave coral turned on to keep your notes higher.";
-            ActionNoteText.text = "F";
-        }
-
-        else if (ActionNoteInt == 13) {
-            ActionText.text = "Leave the Octave coral turned on to keep your notes higher.";
-            ActionNoteText.text = "C";
-        }
-
-        else if (ActionNoteInt == 14) {
-            ActionText.text = "Leave the Octave coral turned on to keep your notes higher.";
-            ActionNoteText.text = "E";
-        }
-
-        else if (ActionNoteInt == 15) {
-            ActionText.text = "Click the Octave coral to turn it off and make your notes lower again.";
-            ActionNoteText.text = "Oct & A";
-        }
-
-        else if (ActionNoteInt == 16) {
-            ActionText.text = "Well done! Go to the Main Menu to start making music with Duke!";
-            ActionNoteText.text = "";
         }
     }
 
