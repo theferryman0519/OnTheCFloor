@@ -211,7 +211,7 @@ public class Buttons05 : MonoBehaviour {
     float FishNoteSpeed = 3.0f;
     float FishEndTime = 9.0f;
     float FishNoteStart = 800.0f;
-    float BetweenFishNotes = 0.9f;
+    float BetweenFishNotes = 0.6f;
 
 // -------------------- PRIVATE VARIABLES --------------------
 
