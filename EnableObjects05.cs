@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
-public class EnableObjects04 : MonoBehaviour {
+public class EnableObjects05 : MonoBehaviour {
 
 // ------------------------------ START: LIST OF VARIABLES ------------------------------
 // -------------------- PUBLIC VARIABLES --------------------
@@ -16,6 +16,7 @@ public class EnableObjects04 : MonoBehaviour {
     public Text TitleText;
     public Image MainMenuButton;
     public Image SettingsButton;
+    public GameObject MainCanvas;
 
     // Coral
     public Image CoralAOff;
@@ -64,8 +65,47 @@ public class EnableObjects04 : MonoBehaviour {
     public Image DukeArmG;
     public Image DukeArmOctave;
 
-    // Action Texts
-    public Text ActionText;
+    // Intro Panel
+    public Image BackgroundOverlay;
+    public Image IntroPanel;
+    public Text IntroTitleText;
+    public Text IntroTextA;
+    public Text IntroTextB;
+    public Text IntroTextC;
+    public Image IntroImageC1;
+    public Image IntroImageC2;
+    public Text IntroTextD;
+    public Image IntroPriorButton;
+    public Image IntroNextButton;
+    public Image IntroScroll;
+    public Image Viewport;
+    public Image Content;
+    public Text SongTitle01;
+    public Text SongTitle02;
+    public Text SongTitle03;
+    public Text SongTitle04;
+    public Text SongTitle05;
+    public Text SongTitle06;
+    public Text SongTitle07;
+    public Text SongTitle08;
+    public Text SongTitle09;
+    public Text SongTitle10;
+    public Text SongTitle11;
+    public Text SongTitle12;
+    public Text SongTitle13;
+    public Image SongButton01;
+    public Image SongButton02;
+    public Image SongButton03;
+    public Image SongButton04;
+    public Image SongButton05;
+    public Image SongButton06;
+    public Image SongButton07;
+    public Image SongButton08;
+    public Image SongButton09;
+    public Image SongButton10;
+    public Image SongButton11;
+    public Image SongButton12;
+    public Image SongButton13;
 
     // Settings Panel
     public Image BackgroundOverlaySettings;
@@ -75,6 +115,11 @@ public class EnableObjects04 : MonoBehaviour {
     public Image SettingsOnButton;
     public Image SettingsOffButton;
     public Image SettingsBackButton;
+
+    // After The Song
+    public Text ActionText;
+    public Image ReplayButton;
+    public Image ReselectButton;
 
 // -------------------- PRIVATE VARIABLES --------------------
     
@@ -88,8 +133,11 @@ public class EnableObjects04 : MonoBehaviour {
     public static int CoralFOnOff;
     public static int CoralGOnOff;
     public static int CoralOctaveOnOff;
+    public static int IntroSlideInt;
     public static int SettingPanelOnOff;
     public static int SettingNotesOnOff;
+    public static int ChosenSong;
+    public static int AfterSongInt;
 
 // ------------------------------ END: LIST OF VARIABLES ------------------------------
 // ------------------------------ START: CALLING OTHER SCRIPTS ------------------------------
@@ -110,11 +158,14 @@ public class EnableObjects04 : MonoBehaviour {
         CoralEOnOff = 0;
         CoralFOnOff = 0;
         CoralGOnOff = 0;
+        IntroSlideInt = 1;
         CoralOctaveOnOff = 0;
         SettingPanelOnOff = 0;
         SettingNotesOnOff = 0;
+        ChosenSong = 0;
+        AfterSongInt = 0;
 
-        PlaySounds.BackgroundMusicIsMute = 0;
+        PlaySounds.BackgroundMusicIsMute = 1;
     }
 
 // -------------------- AWAKE FUNCTION --------------------
@@ -124,8 +175,32 @@ public class EnableObjects04 : MonoBehaviour {
 
 // -------------------- UPDATE FUNCTION --------------------
     void Update() {
+        IntroPanelUpdate();
         CoralOnOffUpdate();
         SettingPanelUpdate();
+
+        if (AfterSongInt == 1) {
+            EnableAfterSong();
+        }
+
+        else if (AfterSongInt == 0) {
+            DisableAfterSong();
+        }
+
+        // Set Song Titles
+        SongTitle01.text = "Adeste Fideles";
+        SongTitle02.text = "Auld Lang Syne";
+        SongTitle03.text = "Camptown Races";
+        SongTitle04.text = "Farmer in the Dell";
+        SongTitle05.text = "Happy Birthday";
+        SongTitle06.text = "I Saw Three Ships";
+        SongTitle07.text = "London Bridge";
+        SongTitle08.text = "Old MacDonald";
+        SongTitle09.text = "Pop Goes the Weasel";
+        SongTitle10.text = "Skip to My Lou";
+        SongTitle11.text = "Twinkle, Twinkle";
+        SongTitle12.text = "When the Saints Go Marching In";
+        SongTitle13.text = "Yankee Doodle";
     }
 
 // ------------------------------ END: CALLING INITIAL FUNCTIONS ------------------------------
@@ -136,6 +211,12 @@ public class EnableObjects04 : MonoBehaviour {
         TitleText.enabled = true;
         MainMenuButton.enabled = true;
         SettingsButton.enabled = true;
+    }
+
+    public void EnableAfterSong() {
+        ActionText.enabled = true;
+        ReplayButton.enabled = true;
+        ReselectButton.enabled = true;
     }
 
     public void EnableCoralAOff() {
@@ -340,7 +421,70 @@ public class EnableObjects04 : MonoBehaviour {
         DukeArmF.enabled = true;
         DukeArmG.enabled = true;
         DukeArmOctave.enabled = true;
-        ActionText.enabled = true;
+    }
+
+    public void EnableIntroPanelMain() {
+        BackgroundOverlay.enabled = true;
+        IntroPanel.enabled = true;
+        IntroTitleText.enabled = true;
+    }
+
+    public void EnableIntroPanelSlideA() {
+        IntroTextA.enabled = true;
+        IntroNextButton.enabled = true;
+    }
+
+    public void EnableIntroPanelSlideB() {
+        IntroTextB.enabled = true;
+        IntroPriorButton.enabled = true;
+        IntroNextButton.enabled = true;
+    }
+
+    public void EnableIntroPanelSlideC() {
+        IntroTextC.enabled = true;
+        IntroImageC1.enabled = true;
+        IntroImageC2.enabled = true;
+        IntroPriorButton.enabled = true;
+        IntroNextButton.enabled = true;
+    }
+
+    public void EnableIntroPanelSlideD() {
+        IntroTextD.enabled = true;
+        IntroPriorButton.enabled = true;
+        IntroNextButton.enabled = true;
+    }
+
+    public void EnableIntroPanelSlideScroll() {
+        IntroScroll.enabled = true;
+        Viewport.enabled = true;
+        Content.enabled = true;
+        SongTitle01.enabled = true;
+        SongTitle02.enabled = true;
+        SongTitle03.enabled = true;
+        SongTitle04.enabled = true;
+        SongTitle05.enabled = true;
+        SongTitle06.enabled = true;
+        SongTitle07.enabled = true;
+        SongTitle08.enabled = true;
+        SongTitle09.enabled = true;
+        SongTitle10.enabled = true;
+        SongTitle11.enabled = true;
+        SongTitle12.enabled = true;
+        SongTitle13.enabled = true;
+        SongButton01.enabled = true;
+        SongButton02.enabled = true;
+        SongButton03.enabled = true;
+        SongButton04.enabled = true;
+        SongButton05.enabled = true;
+        SongButton06.enabled = true;
+        SongButton07.enabled = true;
+        SongButton08.enabled = true;
+        SongButton09.enabled = true;
+        SongButton10.enabled = true;
+        SongButton11.enabled = true;
+        SongButton12.enabled = true;
+        SongButton13.enabled = true;
+        IntroPriorButton.enabled = true;
     }
 
     public void EnableSettingsPanel() {
@@ -365,6 +509,12 @@ public class EnableObjects04 : MonoBehaviour {
         TitleText.enabled = false;
         MainMenuButton.enabled = false;
         SettingsButton.enabled = false;
+    }
+
+    public void DisableAfterSong() {
+        ActionText.enabled = false;
+        ReplayButton.enabled = false;
+        ReselectButton.enabled = false;
     }
 
     public void DisableCoralAOff() {
@@ -457,7 +607,69 @@ public class EnableObjects04 : MonoBehaviour {
         DukeArmF.enabled = false;
         DukeArmG.enabled = false;
         DukeArmOctave.enabled = false;
-        ActionText.enabled = false;
+    }
+
+    public void DisableIntroPanelMain() {
+        BackgroundOverlay.enabled = false;
+        IntroPanel.enabled = false;
+        IntroTitleText.enabled = false;
+    }
+
+    public void DisableIntroPanelSlideA() {
+        IntroTextA.enabled = false;
+        IntroNextButton.enabled = false;
+    }
+
+    public void DisableIntroPanelSlideB() {
+        IntroTextB.enabled = false;
+        IntroPriorButton.enabled = false;
+        IntroNextButton.enabled = false;
+    }
+
+    public void DisableIntroPanelSlideC() {
+        IntroTextC.enabled = false;
+        IntroImageC1.enabled = false;
+        IntroImageC2.enabled = false;
+        IntroPriorButton.enabled = false;
+        IntroNextButton.enabled = false;
+    }
+
+    public void DisableIntroPanelSlideD() {
+        IntroTextD.enabled = false;
+        IntroPriorButton.enabled = false;
+    }
+
+    public void DisableIntroPanelSlideScroll() {
+        IntroScroll.enabled = false;
+        Viewport.enabled = false;
+        Content.enabled = false;
+        SongTitle01.enabled = false;
+        SongTitle02.enabled = false;
+        SongTitle03.enabled = false;
+        SongTitle04.enabled = false;
+        SongTitle05.enabled = false;
+        SongTitle06.enabled = false;
+        SongTitle07.enabled = false;
+        SongTitle08.enabled = false;
+        SongTitle09.enabled = false;
+        SongTitle10.enabled = false;
+        SongTitle11.enabled = false;
+        SongTitle12.enabled = false;
+        SongTitle13.enabled = false;
+        SongButton01.enabled = false;
+        SongButton02.enabled = false;
+        SongButton03.enabled = false;
+        SongButton04.enabled = false;
+        SongButton05.enabled = false;
+        SongButton06.enabled = false;
+        SongButton07.enabled = false;
+        SongButton08.enabled = false;
+        SongButton09.enabled = false;
+        SongButton10.enabled = false;
+        SongButton11.enabled = false;
+        SongButton12.enabled = false;
+        SongButton13.enabled = false;
+        IntroPriorButton.enabled = false;
     }
 
     public void DisableSettingsPanel() {
@@ -477,6 +689,69 @@ public class EnableObjects04 : MonoBehaviour {
     }
 
 // -------------------- UPDATE FUNCTIONS --------------------
+    public void IntroPanelUpdate() {
+        if ((IntroSlideInt == 0) || (IntroSlideInt == 6)) {
+            DisableIntroPanelMain();
+            DisableIntroPanelSlideA();
+            DisableIntroPanelSlideB();
+            DisableIntroPanelSlideC();
+            DisableIntroPanelSlideD();
+            DisableIntroPanelSlideScroll();
+
+            PlaySounds.BackgroundMusicIsMute = 0;
+        }
+
+        else if (IntroSlideInt == 1) {
+            DisableIntroPanelSlideB();
+            DisableIntroPanelSlideC();
+            DisableIntroPanelSlideD();
+            DisableIntroPanelSlideScroll();
+
+            EnableIntroPanelMain();
+            EnableIntroPanelSlideA();
+        }
+
+        else if (IntroSlideInt == 2) {
+            DisableIntroPanelSlideA();
+            DisableIntroPanelSlideC();
+            DisableIntroPanelSlideD();
+            DisableIntroPanelSlideScroll();
+
+            EnableIntroPanelMain();
+            EnableIntroPanelSlideB();
+        }
+
+        else if (IntroSlideInt == 3) {
+            DisableIntroPanelSlideA();
+            DisableIntroPanelSlideB();
+            DisableIntroPanelSlideD();
+            DisableIntroPanelSlideScroll();
+
+            EnableIntroPanelMain();
+            EnableIntroPanelSlideC();
+        }
+
+        else if (IntroSlideInt == 4) {
+            DisableIntroPanelSlideA();
+            DisableIntroPanelSlideB();
+            DisableIntroPanelSlideC();
+            DisableIntroPanelSlideScroll();
+
+            EnableIntroPanelMain();
+            EnableIntroPanelSlideD();
+        }
+
+        else if (IntroSlideInt == 5) {
+            DisableIntroPanelSlideA();
+            DisableIntroPanelSlideB();
+            DisableIntroPanelSlideC();
+            DisableIntroPanelSlideD();
+
+            EnableIntroPanelMain();
+            EnableIntroPanelSlideScroll();
+        }
+    }
+
     public void SettingPanelUpdate() {
         if (SettingPanelOnOff == 0) {
             DisableSettingsPanel();

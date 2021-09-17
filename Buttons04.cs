@@ -15,7 +15,7 @@ public class Buttons04 : MonoBehaviour {
     public Button SettingsButton;
     public Button ReplayNoteButton;
 
-    public Text ResultsText;
+    public Text ActionText;
 
     // Duke
     public Button BubbleNotesAOn;
@@ -1844,323 +1844,337 @@ public class Buttons04 : MonoBehaviour {
     public void CheckCorrectResult() {
         if (CheckCorrectInt == 1) {
             if (ResultsIdentifyInt == 1) {
-                ResultsText.text = "Perfect!" + "\n" + "The lower A was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The lower A was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (1 + 1)) || (ResultsIdentifyInt == (1 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (1 + 2)) || (ResultsIdentifyInt == (1 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (1 + 7)) || (ResultsIdentifyInt == (1 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 2) {
             if (ResultsIdentifyInt == 2) {
-                ResultsText.text = "Perfect!" + "\n" + "The lower B was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The lower B was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (2 + 1)) || (ResultsIdentifyInt == (2 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (2 + 2)) || (ResultsIdentifyInt == (2 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (2 + 7)) || (ResultsIdentifyInt == (2 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 3) {
             if (ResultsIdentifyInt == 3) {
-                ResultsText.text = "Perfect!" + "\n" + "The lower C was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The lower C was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (3 + 1)) || (ResultsIdentifyInt == (3 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (3 + 2)) || (ResultsIdentifyInt == (3 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (3 + 7)) || (ResultsIdentifyInt == (3 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 4) {
             if (ResultsIdentifyInt == 4) {
-                ResultsText.text = "Perfect!" + "\n" + "The lower D was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The lower D was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (4 + 1)) || (ResultsIdentifyInt == (4 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (4 + 2)) || (ResultsIdentifyInt == (4 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (4 + 7)) || (ResultsIdentifyInt == (4 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 5) {
             if (ResultsIdentifyInt == 5) {
-                ResultsText.text = "Perfect!" + "\n" + "The lower E was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The lower E was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (5 + 1)) || (ResultsIdentifyInt == (5 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (5 + 2)) || (ResultsIdentifyInt == (5 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (5 + 7)) || (ResultsIdentifyInt == (5 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 6) {
             if (ResultsIdentifyInt == 6) {
-                ResultsText.text = "Perfect!" + "\n" + "The lower F was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The lower F was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (6 + 1)) || (ResultsIdentifyInt == (6 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (6 + 2)) || (ResultsIdentifyInt == (6 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (6 + 7)) || (ResultsIdentifyInt == (6 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 7) {
             if (ResultsIdentifyInt == 7) {
-                ResultsText.text = "Perfect!" + "\n" + "The lower G was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The lower G was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (7 + 1)) || (ResultsIdentifyInt == (7 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (7 + 2)) || (ResultsIdentifyInt == (7 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (7 + 7)) || (ResultsIdentifyInt == (7 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 8) {
             if (ResultsIdentifyInt == 8) {
-                ResultsText.text = "Perfect!" + "\n" + "The higher A was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The higher A was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (8 + 1)) || (ResultsIdentifyInt == (8 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (8 + 2)) || (ResultsIdentifyInt == (8 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (8 + 7)) || (ResultsIdentifyInt == (8 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 9) {
             if (ResultsIdentifyInt == 9) {
-                ResultsText.text = "Perfect!" + "\n" + "The higher B was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The higher B was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (9 + 1)) || (ResultsIdentifyInt == (9 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (9 + 2)) || (ResultsIdentifyInt == (9 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (9 + 7)) || (ResultsIdentifyInt == (9 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 10) {
             if (ResultsIdentifyInt == 10) {
-                ResultsText.text = "Perfect!" + "\n" + "The higher C was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The higher C was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (10 + 1)) || (ResultsIdentifyInt == (10 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (10 + 2)) || (ResultsIdentifyInt == (10 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (10 + 7)) || (ResultsIdentifyInt == (10 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 11) {
             if (ResultsIdentifyInt == 11) {
-                ResultsText.text = "Perfect!" + "\n" + "The higher D was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The higher D was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (11 + 1)) || (ResultsIdentifyInt == (11 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (11 + 2)) || (ResultsIdentifyInt == (11 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (11 + 7)) || (ResultsIdentifyInt == (11 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 12) {
             if (ResultsIdentifyInt == 12) {
-                ResultsText.text = "Perfect!" + "\n" + "The higher E was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The higher E was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (12 + 1)) || (ResultsIdentifyInt == (12 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (12 + 2)) || (ResultsIdentifyInt == (12 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (12 + 7)) || (ResultsIdentifyInt == (12 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 13) {
             if (ResultsIdentifyInt == 13) {
-                ResultsText.text = "Perfect!" + "\n" + "The higher F was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The higher F was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (13 + 1)) || (ResultsIdentifyInt == (13 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (13 + 2)) || (ResultsIdentifyInt == (13 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (13 + 7)) || (ResultsIdentifyInt == (13 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
 
         else if (CheckCorrectInt == 14) {
             if (ResultsIdentifyInt == 14) {
-                ResultsText.text = "Perfect!" + "\n" + "The higher G was the correct note.";
+                ActionText.text = "Perfect!" + "\n" + "The higher G was the correct note.";
                 StartCoroutine(PlayByEarNotes());
             }
 
             else if ((ResultsIdentifyInt == (14 + 1)) || (ResultsIdentifyInt == (14 - 1))) {
-                ResultsText.text = "Almost there";
+                ActionText.text = "Almost there";
             }
 
             else if ((ResultsIdentifyInt == (14 + 2)) || (ResultsIdentifyInt == (14 - 2))) {
-                ResultsText.text = "Not quite, keep trying";
+                ActionText.text = "Not quite, keep trying";
             }
 
             else if ((ResultsIdentifyInt == (14 + 7)) || (ResultsIdentifyInt == (14 - 7))) {
-                ResultsText.text = "Check your Octave coral";
+                ActionText.text = "Check your Octave coral";
             }
 
             else {
                 CheckCorrectInt = 0;
+                ActionText.text = "Not quite, keep trying";
             }
         }
     }
